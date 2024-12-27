@@ -2,6 +2,8 @@
 
 ![Logo](assets/logo.png)
 
+[![Terraform CI](https://github.com/ErnestoGamon/terraform-dns-manager/actions/workflows/terraform.yml/badge.svg)](https://github.com/ErnestoGamon/terraform-dns-manager/actions/workflows/terraform.yml)
+
 A comprehensive Terraform module for managing existing domains through Namecheap and Cloudflare. This module helps you:
 - Configure nameservers for existing Namecheap domains
 - Create and manage Cloudflare zones
