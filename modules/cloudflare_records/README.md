@@ -65,3 +65,7 @@ module "cloudflare_records" {
   ]
 }
 ```
+
+## Author
+
+Ernesto Gamon

@@ -1,6 +1,6 @@
 output "cloudflare_name_servers" {
   description = "The name servers of the Cloudflare zone"
-  value       = cloudflare_zone.domain.name_servers
+  value       = cloudflare_zone.domain_zone.name_servers
 }
 
 output "cloudflare_zone_id" {
