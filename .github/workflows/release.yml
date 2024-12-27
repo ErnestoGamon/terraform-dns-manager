@@ -1,0 +1,36 @@
+name: "Create Release"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_release:
+    name: "Create GitHub Release"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v2
+
+      - name: "Set up Git"
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: "Get version from file"
+        id: get_version
+        run: |
+          VERSION=$(cat VERSION)
+          echo "::set-output name=version::$VERSION"
+
+      - name: "Create Release"
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.get_version.outputs.version }}
+          release_name: Release ${{ steps.get_version.outputs.version }}
+          draft: false
+          prerelease: false
