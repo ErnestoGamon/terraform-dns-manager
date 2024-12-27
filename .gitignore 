@@ -12,4 +12,4 @@ override.tf.json
 terraform.rc
 
 # Ignore .terraform directories in environments
-environments/**/.terraform/
+.terraform
