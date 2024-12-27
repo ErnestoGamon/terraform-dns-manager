@@ -1,5 +1,7 @@
 # Terraform DNS Manager
 
+![Logo](assets/logo.png)
+
 A comprehensive Terraform module for managing existing domains through Namecheap and Cloudflare. This module helps you:
 - Configure nameservers for existing Namecheap domains
 - Create and manage Cloudflare zones
