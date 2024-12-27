@@ -25,9 +25,11 @@ variable "namecheap_use_sandbox" {
 variable "domain_name" {
   description = "Domain name that we want to manage"
   type        = string
+  sensitive   = false
 }
 
 variable "nameservers" {
   description = "Nameservers for the domain"
   type        = list(string)
+  sensitive   = false
 }
