@@ -12,7 +12,14 @@ module "domain_register" {
   namecheap_api_key     = var.namecheap_api_key
   namecheap_use_sandbox = var.namecheap_use_sandbox
   domain_name           = var.domain_name
-  nameservers           = module.zone.cloudflare_zone_name_servers
+  nameservers           = module.zone.cloudflare_name_servers
+}
+
+module "cloudflare_records" {
+  source               = "./modules/cloudflare_records"
+  cloudflare_api_token = var.cloudflare_api_token
+  cloudflare_zone_id   = module.zone.cloudflare_zone_id
+  dns_records          = var.dns_records
 }
 
 

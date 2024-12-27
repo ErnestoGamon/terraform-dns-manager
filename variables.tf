@@ -45,3 +45,18 @@ variable "cloudflare_api_token" {
   type        = string
   sensitive   = true
 }
+
+variable "dns_records" {
+  description = "The DNS records to create"
+  type = list(object({
+    name     = string
+    type     = string
+    ttl      = number
+    value    = string
+    proxied  = bool
+    comment  = optional(string)
+    priority = optional(number)
+    tags     = optional(list(string))
+  }))
+  sensitive = false
+}
