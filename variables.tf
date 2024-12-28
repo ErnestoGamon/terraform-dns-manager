@@ -46,6 +46,12 @@ variable "cloudflare_api_token" {
   sensitive   = true
 }
 
+variable "cloudflare_email" {
+  description = "The Cloudflare email"
+  type        = string
+  sensitive   = false
+}
+
 
 variable "dns_records" {
   description = "The DNS records to create"

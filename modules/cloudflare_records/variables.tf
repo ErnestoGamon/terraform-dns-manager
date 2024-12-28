@@ -4,6 +4,12 @@ variable "cloudflare_api_token" {
   sensitive   = true
 }
 
+variable "cloudflare_email" {
+  description = "The Cloudflare email"
+  type        = string
+  sensitive   = false
+}
+
 variable "cloudflare_zone_id" {
   description = "The Cloudflare zone ID"
   type        = string
