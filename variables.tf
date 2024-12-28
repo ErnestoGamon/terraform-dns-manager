@@ -53,7 +53,7 @@ variable "dns_records" {
     name            = string
     type            = string
     ttl             = number
-    content         = string
+    value           = string
     proxied         = optional(bool)
     comment         = optional(string)
     priority        = optional(number)
