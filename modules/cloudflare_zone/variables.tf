@@ -16,6 +16,13 @@ variable "cloudflare_zone_name" {
   sensitive   = false
 }
 
+variable "cloudflare_email" {
+  description = "The Cloudflare email"
+  type        = string
+  sensitive   = false
+}
+
+
 variable "jump_start" {
   description = "Whether to scan for DNS records on creation"
   type        = bool

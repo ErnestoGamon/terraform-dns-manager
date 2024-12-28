@@ -3,6 +3,8 @@ module "zone" {
   cloudflare_account_id = var.cloudflare_account_id
   cloudflare_zone_name  = var.cloudflare_zone_name
   cloudflare_api_token  = var.cloudflare_api_token
+  cloudflare_email      = var.cloudflare_email
+
 }
 
 module "domain_register" {
@@ -20,6 +22,7 @@ module "cloudflare_records" {
   cloudflare_api_token = var.cloudflare_api_token
   cloudflare_zone_id   = module.zone.cloudflare_zone_id
   dns_records          = var.dns_records
+  cloudflare_email     = var.cloudflare_email
 }
 
 
