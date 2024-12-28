@@ -5,7 +5,7 @@ resource "cloudflare_record" "records" {
   name            = each.value.name
   type            = each.value.type
   ttl             = each.value.ttl
-  content         = lookup(each.value, "content", null)
+  content         = lookup(each.value, "content", lookup(each.value, "value", null))
   proxied         = lookup(each.value, "proxied", null)
   comment         = lookup(each.value, "comment", null)
   priority        = lookup(each.value, "priority", null)
